@@ -1,9 +1,9 @@
 from pathlib import Path
 from decouple import config
-
+import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+CORE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = config('SECRET_KEY')
 
@@ -24,7 +24,8 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'rest_framework',
     'autorizacao',
-    'pizzaria'
+    'pizzaria',
+    'frontend',
 ]
 
 MIDDLEWARE = [
@@ -43,7 +44,7 @@ ROOT_URLCONF = 'setup.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['frontend/piulzza/build'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -108,7 +109,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = 'frontend/piulzza/build/static/'
+
+
+if DEBUG:
+    STATICFILES_DIRS = (os.path.join(CORE_DIR, 'frontend/piulzza/build/static'),)
+else:
+    STATIC_ROOT = os.path.join(CORE_DIR, 'apps/static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

@@ -8,4 +8,4 @@ from django.http.response import HttpResponse
 # class Index(ListView):
 
 def index(request):
-    return HttpResponse('<h1>Teste</h1>')
+    return render(request, 'index.html')
