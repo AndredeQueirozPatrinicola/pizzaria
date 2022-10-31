@@ -18,17 +18,23 @@ class PizzaSerialiazer(serializers.ModelSerializer):
         fields = ['id', 'nome', 'sabores', 'preco', 'sabores']
 
 
+    def create(self, validated_data):
+        pizza_instance = models.Pizza.objects.create(**validated_data)
+        return pizza_instance
+
+
+
 class PedidoSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.Pedido
         fields = ['pizza', 'horario', 'user', 'status']
 
-class Pizza2erialiazer(serializers.ModelSerializer):
-    class Meta:
-        model = models.Pizza
-        fields = ['id', 'nome', 'sabores', 'preco', 'sabores']
-    
-class Pizza3Serialiazer(Pizza2erialiazer):
-    sabores = SaboresSerialiazer(many=True)
+    def get_count(self,obj):
+        request = self.context.get("request")
+        user_id = request.user.id
+
+        return
+
+
 
