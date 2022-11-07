@@ -19,7 +19,7 @@ class Pizza(models.Model):
         return self.nome
 
 class Pedido(models.Model):
-    pizza = models.ForeignKey(Pizza, on_delete=models.SET_DEFAULT, default='Pizza deletada')
+    pizza = models.ForeignKey(Pizza, on_delete=models.SET_DEFAULT, default='Pizza deletada', related_name='pizza')
     horario = models.TimeField(auto_now=True)
     user = models.ForeignKey(Cliente, on_delete=models.SET_DEFAULT, default='Cliente excluido')
     status = models.CharField(max_length=255)

@@ -19,21 +19,8 @@ class PizzaViewset(viewsets.ModelViewSet):
     serializer_class = PizzaSerialiazer
     http_method_names = ['get','post','retrieve','put','patch']
 
-    # def create(self, request):
-    #     sabores = get_object_or_404(Sabores, sabores=request.data.get('nome'))
-
-
-    #     serializer = self.get_serializer(data=request.data)
-    #     serializer.is_valid(raise_exception=True)
-    #     serializer.save(subject=sabores)
-    #     headers = self.get_success_headers(serializer.data)
-
-    #     return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
-
 
 class PedidoViewset(viewsets.ModelViewSet):
-    queryset = Pedido.objects.select_related('pizza', 'user')
-    # queryset = Pedido.objects.all()
+    queryset = Pedido.objects.all()#select_related('pizza', 'user')
     serializer_class = PedidoSerializer
-
-
+    http_method_names = ['get','post','retrieve','put','patch']
