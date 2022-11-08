@@ -8,16 +8,15 @@ django.setup()
 def rename_react_files(static, file_names):
     file_path = 'frontend/piulzza/build/static/'
     javascript_or_css = os.listdir(f'{file_path}{static}') 
-    
+
     x = 0
     for file in javascript_or_css:
-
         if file != file_names[x]:
-
             old_file = os.path.join(f'{file_path}{static}/{file}')
-            new_file = os.path.join(f'{file_path}{static}/{file_names[x]}')
-
-            os.rename(old_file, new_file)
+            select_js_or_css = file.rsplit('.')
+            if len(select_js_or_css) == 3:
+                new_file = os.path.join(f'{file_path}{static}/{file_names[x]}')
+                os.rename(old_file, new_file)
 
         x += 1
 
