@@ -14,8 +14,10 @@ def rename_react_files(static, file_names):
         if file != file_names[x]:
             old_file = os.path.join(f'{file_path}{static}/{file}')
             select_js_or_css = file.rsplit('.')
+            print(select_js_or_css)
             if len(select_js_or_css) == 3:
-                new_file = os.path.join(f'{file_path}{static}/{file_names[x]}')
+                new_file = os.path.join(f'{file_path}{static}/{select_js_or_css[0] + "."+ select_js_or_css[-1]}')
+                print(new_file)
                 os.rename(old_file, new_file)
 
         x += 1
