@@ -1,0 +1,40 @@
+html, body{
+    height: 100%;
+}
+
+#root{
+    padding: 0;
+    margin: 0;
+}
+
+.App{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main-content{
+    margin: 0 30px 0 30px;
+    width: 1000px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.card-image{
+    margin: 5px;
+    padding: 25px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.card{
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 3px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}

@@ -3,5 +3,26 @@
     background-color: #840d23;
     height: 110px;
     display: flex;
-    
+    width: 100%;
+    justify-content: space-around;
+}
+
+.centralize-nav-divs{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #fff;
+}
+
+.logo-div{
+    width: 60%;
+}
+
+.nav-list{
+    width: 140%;
+}
+
+.nav-list > li {
+    text-decoration: none;
+    list-style: none;
 }
