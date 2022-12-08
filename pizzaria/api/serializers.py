@@ -21,7 +21,7 @@ class PizzaSerialiazer(serializers.ModelSerializer):
     def create(self, validated_data):
         sabores_dados = validated_data.pop('sabores')
         pizza = models.Pizza.objects.create(**validated_data)
-
+        
         for sabor in sabores_dados:
             sabor, created = models.Sabores.objects.get_or_create(nome=sabor['nome'])
             pizza.sabores.add(sabor)

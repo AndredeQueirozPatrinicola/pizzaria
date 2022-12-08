@@ -12,7 +12,7 @@ from pizzaria.api.serializers import PedidoSerializer, SaboresSerialiazer, Pizza
 class SaboresViewset(viewsets.ModelViewSet):
     queryset = Sabores.objects.all()
     serializer_class = SaboresSerialiazer
-
+    http_method_names = ['get','post','retrieve','put','patch']
 
 class PizzaViewset(viewsets.ModelViewSet):
     queryset = Pizza.objects.prefetch_related('sabores')
@@ -21,6 +21,6 @@ class PizzaViewset(viewsets.ModelViewSet):
 
 
 class PedidoViewset(viewsets.ModelViewSet):
-    queryset = Pedido.objects.all()#select_related('pizza', 'user')
+    queryset = Pedido.objects.select_related('pizza', 'user', 'status')
     serializer_class = PedidoSerializer
     http_method_names = ['get','post','retrieve','put','patch']

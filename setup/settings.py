@@ -11,6 +11,7 @@ DEBUG = config('DEBUG', cast=bool, default=False)
 
 ALLOWED_HOSTS = []
 
+APPEND_SLASH=False
 
 # Application definition
 
