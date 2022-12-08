@@ -1,6 +1,4 @@
 import RoutesApp from './routes';
-// import Pizza from './api/pizza/teste'
-// import Api from './api/main/index';
 import './App.css';
 import React from "react";
 
