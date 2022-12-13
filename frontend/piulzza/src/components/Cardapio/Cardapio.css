@@ -1,5 +1,6 @@
 .main-cardapio{
-    border: 1px solid black;
+    max-width: 1200px;
     width: 70%;
     height: 100%;
+
 }

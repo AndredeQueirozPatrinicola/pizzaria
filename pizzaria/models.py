@@ -12,6 +12,7 @@ class Sabores(models.Model):
 
 class Pizza(models.Model):
     nome = models.CharField(max_length=255)
+    imagem = models.ImageField(upload_to='images/', null=True)
     sabores = models.ManyToManyField(Sabores, related_name='sabores')
     preco = models.FloatField()
 

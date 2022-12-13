@@ -129,6 +129,8 @@ USE_TZ = True
 
 STATIC_URL = 'frontend/piulzza/build/static/'
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media_root')
+MEDIA_URL = '/media/'
 
 if DEBUG:
     STATICFILES_DIRS = (os.path.join(CORE_DIR, 'frontend/piulzza/build/static'),)

@@ -1,9 +1,11 @@
 import './CardPizza.css';
-import React, { useEffect, useState } from "react";
+import placeholder from './pizza-placeholder.jpg';
+import placeholder2 from './frango.jpg';
+import placeholder3 from './pizza-templ.jpg';
+import React from "react";
 
 class CardPizza extends React.Component {
 
-    // Constructor 
     constructor(props) {
         super(props);
 
@@ -13,14 +15,11 @@ class CardPizza extends React.Component {
         };
     }
 
-    // ComponentDidMount is used to
-    // execute the code 
     componentDidMount() {
         fetch(
           "http://127.0.0.1:8000/api/pizza/")
             .then((res) => res.json())
             .then((json) => {
-                console.log(json)
                 this.setState({
                     items: json,
                     DataisLoaded: true
@@ -28,18 +27,33 @@ class CardPizza extends React.Component {
             })
     }
     render() {
+        const array = [placeholder, placeholder2, placeholder3];
         const { DataisLoaded, items } = this.state;
         if (!DataisLoaded) return <div>
             <h1> Pleses wait some time.... </h1> </div> ;
 
         return (
-        <div className = "">
+        <div className = "card-pizza-main">
             {
                 items.map((item) => ( 
-                <ol key = { item.id } >
-                    id: { item.id }<br/>
-                    Nome_pizza: { item.nome }<br/>
-                    Sabores: 
+                <ol key = { item.id } className="card-pizza">
+                    <img className='imagem-card-pizza' src={ array[Math.floor(Math.random() * array.length)] } alt="Imagem pizza"></img>
+                    <li className='nome-pizza'>{ item.nome }</li>
+                        <div>
+                        {
+                            item.sabores.map((sabor)=>
+                            {
+                                if(item.sabores.indexOf(sabor) === item.sabores.length)
+                                {
+                                    return <li key={ sabor.id } className='sabores'>{ sabor.nome }.</li>
+                                }
+                                else
+                                {
+                                    return <li key={ sabor.id } className='sabores'>{ sabor.nome }, </li>
+                                }
+                            })
+                        }
+                    </div>
                     </ol>
                 ))
             }
