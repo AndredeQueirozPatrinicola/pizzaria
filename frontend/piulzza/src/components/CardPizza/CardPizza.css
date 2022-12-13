@@ -1,8 +1,8 @@
 .card-pizza-main{
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
+    flex-wrap: wrap;
     margin-top: 15px;
+    width: 86%;
 }
 
 .card-pizza{
@@ -31,4 +31,14 @@
 .sabores{
     color: rgb(104, 104, 104);
     margin: 0px 0 0 5px;
+}
+
+.spinner-card-pizza{
+    display: flex;
+}
+
+.main-cardapio > .spinner-card-pizza{
+    align-items: center;
+    justify-content: center;
+    margin-top: 170px;
 }
