@@ -5,22 +5,45 @@
     width: 86%;
 }
 
+.card-pizza:hover{
+    transform: scaleY(1.01);
+    transform: scaleX(1.01);
+    backface-visibility: hidden;
+    transition: 200ms;
+    box-shadow: 0 0 2rem 0 rgba(136, 152, 170, 0.889);
+    border-radius: 20px;
+}
+
 .card-pizza{
-    margin: 5px;
+    margin: 7px;
     list-style: none;
     display: flex;
     flex-direction: column;
     min-width: 350px;
     max-width: 550px;
-    box-shadow: 0 0 2rem 0 rgba(136, 152, 170, 0.15);
+    box-shadow: 0 0 2rem 0 rgba(136, 152, 170, 0.518);
     font-size: .85rem;
     line-height: 1rem;
     font-weight: lighter;
+    max-height: 400px;
+}
+
+.sabores-parent{
+    max-height: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 320px;
+    height: 60px;
 }
 
 .imagem-card-pizza{
     width: 350px;
     height: 250px;
+}
+
+.preco{
+    margin: 0 0 6px 6px;
+    font-weight: bold;
 }
 
 .nome-pizza{
@@ -41,4 +64,28 @@
     align-items: center;
     justify-content: center;
     margin-top: 170px;
+}
+
+.icon-pizza{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button-pizza{
+    /* border: 1px solid black; */
+    margin: 12px;
+    /* box-shadow: 0 0 2rem 0 rgba(136, 152, 170, 0.377); */
+}
+
+.button-pizza > svg{
+    width: 40px;
+    height: 40px;
+}
+
+.button-pizza > svg:hover{
+    color: white;
+    border-radius: 20px;
+    background-color: black;
+    transition: 600ms;
 }

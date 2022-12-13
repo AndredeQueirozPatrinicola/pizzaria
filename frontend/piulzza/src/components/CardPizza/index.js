@@ -1,9 +1,7 @@
 import './CardPizza.css';
-import placeholder from './pizza-placeholder.jpg';
-import placeholder2 from './frango.jpg';
-import placeholder3 from './pizza-templ.jpg';
 import React from "react";
 import { TailSpin } from "react-loader-spinner";
+import { CiPizza } from 'react-icons/ci';
 
 class CardPizza extends React.Component {
 
@@ -28,7 +26,6 @@ class CardPizza extends React.Component {
             })
     }
     render() {
-        const array = [placeholder, placeholder2, placeholder3];
         const { DataisLoaded, items } = this.state;
         if (!DataisLoaded) {
             return (
@@ -47,18 +44,20 @@ class CardPizza extends React.Component {
             );
         }
         else {
+            console.log(items);
             return (
                 <div className="card-pizza-main">
                     {
+                        
                         items.map((item) => {
                                 return (
                                     <ol key={item.id} className="card-pizza">
-                                        <img className='imagem-card-pizza' src={array[Math.floor(Math.random() * array.length)]} alt="Imagem pizza"></img>
+                                        <img className='imagem-card-pizza' src={item.imagem} alt="Imagem pizza"></img>
                                         <li className='nome-pizza'>{item.nome}</li>
-                                        <div>
+                                        <div className='sabores-parent'>
                                             {
                                                 item.sabores.map((sabor) => {
-                                                    if (item.sabores.indexOf(sabor) === item.sabores.length) {
+                                                    if (item.sabores.indexOf(sabor) === item.sabores.length - 1) {
                                                         return <li key={sabor.id} className='sabores'>{sabor.nome}.</li>
                                                     }
                                                     else {
@@ -66,6 +65,18 @@ class CardPizza extends React.Component {
                                                     }
                                                 })
                                             }
+                                        </div>
+                                        <div className='icon-pizza'>
+                                            <li className='preco'>
+                                                <p>
+                                                    R$: {item.preco}
+                                                </p>
+                                            </li>
+                                            <div className='button-pizza'>
+                                                <CiPizza
+                                                    color='#black'
+                                                />
+                                            </div>
                                         </div>
                                     </ol>
                                 )

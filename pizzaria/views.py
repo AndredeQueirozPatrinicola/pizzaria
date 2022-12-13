@@ -7,5 +7,5 @@ from django.http.response import HttpResponse
 
 # class Index(ListView):
 
-def index(request):
+def index(request, buffer):
     return render(request, 'index.html')
