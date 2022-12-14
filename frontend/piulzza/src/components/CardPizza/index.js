@@ -44,7 +44,6 @@ class CardPizza extends React.Component {
             );
         }
         else {
-            console.log(items);
             return (
                 <div className="card-pizza-main">
                     {
@@ -72,11 +71,9 @@ class CardPizza extends React.Component {
                                                     R$: {item.preco}
                                                 </p>
                                             </li>
-                                            <div className='button-pizza'>
-                                                <CiPizza
-                                                    color='#black'
-                                                />
-                                            </div>
+                                            <a className='button-pizza' href='#'>
+                                                <CiPizza/>
+                                            </a>
                                         </div>
                                     </ol>
                                 )
