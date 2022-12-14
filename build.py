@@ -1,6 +1,7 @@
 from html.parser import HTMLParser
 from operator import index
 import os, django
+import shutil
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'setup.settings')
 django.setup()
@@ -20,6 +21,19 @@ def rename_react_files(static, file_names):
 
         x += 1
 
+    print(f"Arquivos {static} renomeados para produção")
+
+def move_icon_file():
+    file_path = 'frontend/piulzza/build/favicon.ico'
+    file_destination = "frontend/piulzza/build/static/favicon.ico"
+    try:
+        os.rename(file_path, file_destination)
+        print("Favicon em produção")
+    except:
+        print("Não existe este arquivo, verificar se o favicon ja esta no local correto.")
+        pass
+
 if __name__ == '__main__':
+    move_icon_file()
     rename_react_files('js', ['main.js.map', 'main.js', 'main.js.LICENSE.txt'])
     rename_react_files('css', ['main.css.map', 'main.css'])

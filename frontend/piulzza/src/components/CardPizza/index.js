@@ -27,7 +27,7 @@ class CardPizza extends React.Component {
     }
     render() {
         const { DataisLoaded, items } = this.state;
-        if (!DataisLoaded) {
+        if (!DataisLoaded || !items.length) {
             return (
                 <div className='spinner-card-pizza'>
                     <TailSpin
