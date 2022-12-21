@@ -15,15 +15,16 @@ class PizzaSerialiazer(serializers.ModelSerializer):
     sabores = SaboresSerialiazer(many=True)
     class Meta:
         model = models.Pizza
-        fields = ['id', 'imagem','nome', 'sabores', 'preco', 'sabores']
+        fields = ['id', 'imagem','nome', 'sabores', 'preco', 'sabores', 'borda']
 
 
     def create(self, validated_data):
         sabores_dados = validated_data.pop('sabores')
         pizza = models.Pizza.objects.create(**validated_data)
-        
+
         for sabor in sabores_dados:
             sabor, created = models.Sabores.objects.get_or_create(nome=sabor['nome'])
+            print(sabor, created)
             pizza.sabores.add(sabor)
         return pizza
 

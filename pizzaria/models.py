@@ -5,16 +5,24 @@ from autorizacao.models import Cliente
 
 
 class Sabores(models.Model):
-    nome = models.CharField(max_length=255)
+    nome = models.CharField(max_length=255, unique=True)
 
     def __str__(self):
         return self.nome
 
 class Pizza(models.Model):
+    OPCOES = (
+        ('F', 'Fina'),
+        ('M', 'Média'),
+        ('G', 'Grande'),
+        ('I', 'Integral'),
+    )
+
     nome = models.CharField(max_length=255)
     imagem = models.ImageField(upload_to='images/', null=True)
     sabores = models.ManyToManyField(Sabores, related_name='sabores')
     preco = models.FloatField()
+    borda = models.TextField(max_length=1, default='M', choices=OPCOES)
 
     def __str__(self):
         return self.nome
