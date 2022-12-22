@@ -3,6 +3,7 @@
     flex-wrap: wrap;
     margin-top: 15px;
     width: 86%;
+    justify-content: center ;
 }
 
 .card-pizza:hover{
