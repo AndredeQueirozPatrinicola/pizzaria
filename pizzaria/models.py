@@ -22,7 +22,7 @@ class Pizza(models.Model):
     imagem = models.ImageField(upload_to='images/', null=True)
     sabores = models.ManyToManyField(Sabores, related_name='sabores')
     preco = models.FloatField()
-    borda = models.TextField(max_length=1, default='M', choices=OPCOES)
+    massa = models.TextField(max_length=1, default='M', choices=OPCOES)
 
     def __str__(self):
         return self.nome

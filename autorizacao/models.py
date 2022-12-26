@@ -8,7 +8,7 @@ class Cliente(models.Model):
     rua = models.CharField(max_length=255)
     numero = models.CharField(max_length=255)
     bairro = models.CharField(max_length=255)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.telefone

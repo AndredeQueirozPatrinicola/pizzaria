@@ -15,7 +15,7 @@ class PizzaSerialiazer(serializers.ModelSerializer):
     sabores = SaboresSerialiazer(many=True)
     class Meta:
         model = models.Pizza
-        fields = ['id', 'imagem','nome', 'sabores', 'preco', 'sabores', 'borda']
+        fields = ['id', 'imagem','nome', 'sabores', 'preco', 'sabores', 'massa']
 
 
     def create(self, validated_data):
@@ -24,7 +24,6 @@ class PizzaSerialiazer(serializers.ModelSerializer):
 
         for sabor in sabores_dados:
             sabor, created = models.Sabores.objects.get_or_create(nome=sabor['nome'])
-            print(sabor, created)
             pizza.sabores.add(sabor)
         return pizza
 
@@ -45,7 +44,6 @@ class PedidoSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         pedido_dados = validated_data.pop('pizza')
         pedido = models.Pedido.objects.create(**validated_data)
-
         for pizza in pedido_dados:
             pizza, created = models.Pizza.objects.get_or_create(nome=pizza['pizza'])
             pedido.pizza.add(pizza)
