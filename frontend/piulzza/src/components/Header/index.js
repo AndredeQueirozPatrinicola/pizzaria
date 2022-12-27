@@ -16,7 +16,6 @@ class Header extends React.Component {
 
     render(){
         const dev = window.location.host;
-        console.log(dev)
         if (dev === "127.0.0.1:3000" || dev === "localhost:3000"){
             return(
                 <nav className='nav'>

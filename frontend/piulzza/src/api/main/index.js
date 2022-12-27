@@ -13,7 +13,6 @@ class Api {
                 res.json()
             })
             .then((json) => {
-                console.log(json)
                 return json
             });
     }
