@@ -15,7 +15,7 @@ class PizzaSerialiazer(serializers.ModelSerializer):
     sabores = SaboresSerialiazer(many=True)
     class Meta:
         model = models.Pizza
-        fields = ['id', 'imagem','nome', 'sabores', 'preco', 'sabores', 'massa']
+        fields = ['id', 'imagem','nome', 'sabores', 'preco', 'sabores']
 
 
     def create(self, validated_data):

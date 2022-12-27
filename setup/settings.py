@@ -90,7 +90,7 @@ WSGI_APPLICATION = 'setup.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.mysql',
         'NAME':     config('DBNAME'),
         'USER':     config('DBUSER'),
         'PASSWORD': config('DBPASSWORD'),
