@@ -37,14 +37,14 @@ class PizzaPedido(models.Model):
         ('I', 'Integral'),
     )
 
-    pizza = models.ForeignKey(Pizza, on_delete=models.CASCADE)
+    pizza = models.ForeignKey(Pizza, on_delete=models.CASCADE, related_name='pizza')
     massa = models.TextField(max_length=1, default='M', choices=OPCOES)
 
     def __str__(self):
         return str(self.pizza)
 
 class Carrinho(models.Model):
-    user = models.ForeignKey(Cliente, on_delete=models.CASCADE)
+    user = models.ForeignKey(Cliente, on_delete=models.CASCADE, related_name='cliente')
     pizzas = models.ManyToManyField(PizzaPedido, related_name='pizzas')
     bebidas = models.ManyToManyField(Bebida, related_name='bebidas')
 
@@ -65,7 +65,7 @@ class Pedido(models.Model):
         ('C', 'Cancelado')
     )
 
-    pedido = models.ForeignKey(Carrinho, on_delete=models.CASCADE, related_name='pizza')
+    pedido = models.ForeignKey(Carrinho, on_delete=models.CASCADE, related_name='pedido')
     horario = models.TimeField(auto_now=True)
     user = models.ForeignKey(Cliente, on_delete=models.CASCADE, related_name='user_name')
     status = models.CharField(choices=OPCOES, max_length=1)
