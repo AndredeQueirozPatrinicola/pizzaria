@@ -6,7 +6,6 @@ from pizzaria.api import  viewsets
 router = routers.DefaultRouter()
 router.register('sabores', viewsets.SaboresViewset, basename='sabores')
 router.register('pizza', viewsets.PizzaViewset, basename='pizza')
-router.register('pizza-no', viewsets.PizzaNoImageViewset, basename='pizza')
 router.register('pedidos', viewsets.PedidoViewset, basename='pedidos')
 router.register('bebidas', viewsets.BebidaViewset, basename='bebidas')
 router.register('pizza-pedido', viewsets.PizzaPedidoViewset, basename='pizza pedido')

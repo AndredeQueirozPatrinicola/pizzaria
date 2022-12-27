@@ -56,12 +56,6 @@ class PedidoSerializer(serializers.ModelSerializer):
         model = models.Pedido
         fields = ['horario', 'user', 'status', 'pedido']
 
-    def get_count(self,obj):
-        request = self.context.get("request")
-        user_id = request.user.id
-
-        return
-
     def create(self, validated_data):
         pedido_dados = validated_data.pop('pizza')
         pedido = models.Pedido.objects.create(**validated_data)

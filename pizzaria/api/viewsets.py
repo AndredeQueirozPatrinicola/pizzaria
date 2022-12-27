@@ -19,9 +19,6 @@ class PizzaViewset(viewsets.ModelViewSet):
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     http_method_names = ['get','post','retrieve','put','patch']
 
-class PizzaNoImageViewset(PizzaViewset):
-    serializer_class = serializers.PizzaInterfaceSerializer
-
 class PedidoViewset(viewsets.ModelViewSet):
     queryset = models.Pedido.objects.select_related('pedido', 'user')
     serializer_class = serializers.PedidoSerializer
