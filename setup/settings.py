@@ -11,15 +11,6 @@ DEBUG = config('DEBUG', cast=bool, default=False)
 
 ALLOWED_HOSTS = []
 
-APPEND_SLASH=False
-
-REST_FRAMEWORK = {
-    'DEFAULT_PARSER_CLASSES': (
-        'rest_framework.parsers.FormParser',
-        'rest_framework.parsers.MultiPartParser'
-     )
- }
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -49,6 +40,37 @@ MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
 ]
 
+ROOT_URLCONF = 'setup.urls'
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': ['frontend/templates'],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+
+WSGI_APPLICATION = 'setup.wsgi.application'
+
+# Django Rest Framework
+
+APPEND_SLASH=False
+
+REST_FRAMEWORK = {
+    'DEFAULT_PARSER_CLASSES': (
+        'rest_framework.parsers.FormParser',
+        'rest_framework.parsers.MultiPartParser'
+     )
+ }
+
 CORS_ALLOW_METHODS = [
     "DELETE",
     "GET",
@@ -71,27 +93,6 @@ CORS_ORIGIN_WHITELIST = (
     'http://127.0.0.1:8000', 
     'http://127.0.0.1:3000',
 )
-
-
-ROOT_URLCONF = 'setup.urls'
-
-TEMPLATES = [
-    {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['frontend/templates'],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-            ],
-        },
-    },
-]
-
-WSGI_APPLICATION = 'setup.wsgi.application'
 
 
 # Database
@@ -158,6 +159,8 @@ else:
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
+# DJANGO DEBUG TOOLBAR 
 
 INTERNAL_IPS = [
     "127.0.0.1",
