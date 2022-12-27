@@ -8,12 +8,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('api/', include('pizzaria.api.urls')),
-    
-    path('autorizacao', include('autorizacao.urls')),
 
     path('', include('pizzaria.urls')),
 
-    # path('__debug__/', include('debug_toolbar.urls')),
+    path('__debug__/', include('debug_toolbar.urls')),
 
     re_path(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
     
