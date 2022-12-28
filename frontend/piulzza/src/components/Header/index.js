@@ -2,6 +2,7 @@ import './header.css';
 // import logo from './logo.jpeg';
 import logo from './logo1.png';
 import React from "react";
+import SideBarIcon from '../SideBarIcon';
 
 class Header extends React.Component {
 
@@ -12,6 +13,7 @@ class Header extends React.Component {
             items: [],
             DataisLoaded: false
         };
+
     }
 
     render(){
@@ -20,6 +22,9 @@ class Header extends React.Component {
             return(
                 <nav className='nav'>
                     <div className='logo-div centralize-nav-divs'>
+
+                        <SideBarIcon/>
+
                         <a href='/'>
                             <img className='logo' alt="Logo" src={logo}></img>
                         </a>

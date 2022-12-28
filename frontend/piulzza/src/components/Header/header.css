@@ -19,8 +19,8 @@
 .logo-div{
     width: 61.5%;
     display: flex;
-    justify-content: flex-end;
-    align-items: baseline;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .nav-list{
