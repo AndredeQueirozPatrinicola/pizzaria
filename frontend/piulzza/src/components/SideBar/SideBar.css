@@ -1,0 +1,58 @@
+.icone-side-bar-perfil{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+}
+
+.icone-side-bar-perfil.is-toggled > svg{
+    color: #840d23;
+    border: 2px solid #840d23;
+    border-radius: 50px;
+    width: 20px;
+    height: 20px;
+    transition: transform 1.5s ease;
+}
+
+.icone-side-bar-perfil.is-toggled > svg:hover{
+    color: #fff;
+    border-radius: 20px;
+    background-color: #840d23;
+    transition: 600ms;
+    cursor: pointer;
+}
+
+
+.icone-side-bar-perfil > svg{
+    border: 2px solid #ffffff;
+    border-radius: 50px;
+    width: 20px;
+    height: 20px;
+    transition: transform 1.5s ease;
+}
+
+.icone-side-bar-perfil > svg:hover{
+    color: #840d23;
+    border-radius: 20px;
+    background-color: #ffffff;
+    transition: 600ms;
+    cursor: pointer;
+}
+
+.side-bar{
+    position: relative;
+    color: black;
+    top: 465px;
+    width: 250px;
+    background-color: #eeeeee;
+    transition: 1s;
+    box-shadow: 0 0 2rem 0 rgba(136, 152, 170, 0.889);
+}
+
+.icone-suporte{
+    position: relative;
+    top: 465px;
+    width: 250px;
+    transition: 1s;
+}
+

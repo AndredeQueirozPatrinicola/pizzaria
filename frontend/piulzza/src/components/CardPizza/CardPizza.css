@@ -45,13 +45,13 @@
 .preco{
     margin: 0 0 6px 6px;
     font-weight: bold;
-    color: #840d23;
+    color: #3c0303;;
 }
 
 .nome-pizza{
     font-weight: bold;
     margin: 5px;
-    color: #840d23;
+    color: #3c0303;;
 }
 
 .sabores{
@@ -83,12 +83,12 @@
 .button-pizza > svg{
     width: 40px;
     height: 40px;
-    color: #840d23;
+    color: #3c0303;;
 }
 
 .button-pizza > svg:hover{
     color: #fff;
     border-radius: 20px;
-    background-color: #840d23;
+    background-color: #3c0303;;
     transition: 600ms;
 }

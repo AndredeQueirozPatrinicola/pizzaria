@@ -1,6 +1,7 @@
 .main-cardapio{
     display: flex;
-    width: 80%;
+    width: 70%;
     align-items: center;
     flex-direction: column;
+    margin-top: 1rem;
 }

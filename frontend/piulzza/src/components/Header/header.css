@@ -11,15 +11,18 @@
 
 .centralize-nav-divs{
     display: flex;
-    justify-content: space-evenly;
     align-items: center;
     color: #fff;
+}
+
+.centralize-nav-divs > li > a {
+    margin-left: 9rem;
 }
 
 .logo-div{
     width: 61.5%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -40,4 +43,18 @@
 
 #contato{
     margin-right: 140px;
+}
+
+
+@media only screen and (max-width: 1420px){
+    .centralize-nav-divs{
+        display: flex;
+        align-items: center;
+        color: #fff;
+        justify-content: space-between;
+    }
+
+    .centralize-nav-divs > li > a {
+        margin-left: 0rem;
+    }
 }
