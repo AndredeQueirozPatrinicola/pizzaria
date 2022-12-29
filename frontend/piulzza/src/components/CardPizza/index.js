@@ -16,7 +16,7 @@ class CardPizza extends React.Component {
 
     componentDidMount() {
         fetch(
-            "http://127.0.0.1:8000/api/pizza/")
+            "http://127.0.0.1:8001/api/pizza/")
             .then((res) => res.json())
             .then((json) => {
                 this.setState({
@@ -71,7 +71,7 @@ class CardPizza extends React.Component {
                                                     R$: {item.preco}
                                                 </p>
                                             </li>
-                                            <a className='button-pizza' href='#'>
+                                            <a className='button-pizza' href='/'>
                                                 <CiPizza/>
                                             </a>
                                         </div>

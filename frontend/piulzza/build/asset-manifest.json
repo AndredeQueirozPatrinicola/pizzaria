@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/static/css/main.92b8e957.css",
-    "main.js": "/static/js/main.76addf70.js",
+    "main.js": "/static/js/main.20b2cd81.js",
     "static/media/vaiumapiulzza.png": "/static/media/vaiumapiulzza.cc60522006eaf3e79551.png",
-    "static/media/logo1.png": "/static/media/logo1.7563b418b40301f1c357.png",
+    "static/media/logo.png": "/static/media/logo.7563b418b40301f1c357.png",
     "index.html": "/index.html",
     "main.92b8e957.css.map": "/static/css/main.92b8e957.css.map",
-    "main.76addf70.js.map": "/static/js/main.76addf70.js.map"
+    "main.20b2cd81.js.map": "/static/js/main.20b2cd81.js.map"
   },
   "entrypoints": [
     "static/css/main.92b8e957.css",
-    "static/js/main.76addf70.js"
+    "static/js/main.20b2cd81.js"
   ]
 }
