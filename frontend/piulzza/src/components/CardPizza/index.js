@@ -2,6 +2,7 @@ import './CardPizza.css';
 import React from "react";
 import { TailSpin } from "react-loader-spinner";
 import { CiPizza } from 'react-icons/ci';
+import getHostUrl from '../../api/HostUrl';
 
 class CardPizza extends React.Component {
 
@@ -15,8 +16,9 @@ class CardPizza extends React.Component {
     }
 
     componentDidMount() {
+        const host = getHostUrl()
         fetch(
-            "http://127.0.0.1:8001/api/pizza/")
+             host + "/api/pizza/")
             .then((res) => res.json())
             .then((json) => {
                 this.setState({
@@ -47,7 +49,6 @@ class CardPizza extends React.Component {
             return (
                 <div className="card-pizza-main">
                     {
-                        
                         items.map((item) => {
                                 return (
                                     <ol key={item.id} className="card-pizza">
