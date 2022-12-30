@@ -2,7 +2,7 @@ import './CardPizza.css';
 import React from "react";
 import { TailSpin } from "react-loader-spinner";
 import { CiPizza } from 'react-icons/ci';
-import getHostUrl from '../../api/HostUrl';
+import getApi from '../../api';
 
 class CardPizza extends React.Component {
 
@@ -16,11 +16,8 @@ class CardPizza extends React.Component {
     }
 
     componentDidMount() {
-        const host = getHostUrl()
-        fetch(
-             host + "/api/pizza/")
-            .then((res) => res.json())
-            .then((json) => {
+        const api = getApi('pizza')
+        api.then((json) => {
                 this.setState({
                     items: json,
                     DataisLoaded: true
