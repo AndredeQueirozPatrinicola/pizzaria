@@ -42,7 +42,7 @@
 .side-bar{
     position: relative;
     color: black;
-    top: 465px;
+    top: 250%;
     width: 250px;
     background-color: #eeeeee;
     transition: 1s;
