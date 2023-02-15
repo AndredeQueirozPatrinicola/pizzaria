@@ -20,12 +20,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'debug_toolbar',
     'rest_framework',
      "corsheaders",
     'autorizacao',
     'pizzaria',
-    'frontend',
 ]
 
 MIDDLEWARE = [
@@ -150,9 +148,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media_root')
 MEDIA_URL = '/media/'
 
 if DEBUG:
-    STATICFILES_DIRS = (os.path.join(CORE_DIR, 'frontend/piulzza/build/static'),)
+    STATICFILES_DIRS = (os.path.join(CORE_DIR, 'frontend/build/static'),)
 else:
-    STATIC_ROOT = os.path.join(CORE_DIR, 'apps/static')
+    STATIC_ROOT = os.path.join(CORE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
