@@ -504,7 +504,7 @@ var client = __webpack_require__(745);
 function App() {
   return /*#__PURE__*/react.createElement("div", {
     className: "App"
-  });
+  }, "oi");
 }
 /* harmony default export */ const src_App = (App);
 ;// CONCATENATED MODULE: ./frontend/src/index.js
