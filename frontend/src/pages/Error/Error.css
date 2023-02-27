@@ -1,0 +1,16 @@
+.Error{
+    min-height: 100rem;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.mainError{
+    max-height: 20rem;
+    width: 40%;
+    box-shadow: 0 0 2rem 0 rgba(136, 152, 170, 0.15);
+    background: #b1b1b12e;
+    min-height: 20rem;
+    margin-top: 14rem;
+}
