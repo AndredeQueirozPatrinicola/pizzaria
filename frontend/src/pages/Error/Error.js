@@ -4,7 +4,6 @@ import './Error.css';
 import { Outlet, Link } from "react-router-dom";
 
 export default function Error() {
-  const error = useRouteError();
   return (
     <div className="Error">
       <div className='mainError'>
@@ -13,10 +12,10 @@ export default function Error() {
                   Oops...
               </div>
               <div className='error-code'>
-                  {error.status} - {error.statusText}
+                  404 - Not Found
               </div>
               <div className='error-description'>
-                  {error.data} - Click to return to <Link to={'/'} className="home-link">Home</Link>
+                 Click to return to <Link to={'/'} className="home-link">Home</Link>
               </div>
           </div>
       </div>  
