@@ -1,0 +1,31 @@
+.Header{
+    display: flex;
+    width: 100%;
+    min-height: 7rem;
+    background-color: #850d23;
+    box-shadow: 0 0 2rem 0 #850d2321;
+    position: fixed;
+    z-index: 2;
+}
+
+.logo-header-container, .login-header-container, .nav-header-container{
+    width: 100%;
+    min-height: 100%;
+    height: 7rem;
+    display: flex;
+}
+
+.login-header-container{
+    width: 25% !important;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-header-container > div > a{
+    border: 1px solid #d5bebe;
+    padding: 1.25rem;
+    border-radius: 50%;
+    background-color: #d5bebe;
+    font-size: 22px;
+    color: #48000d;
+}
