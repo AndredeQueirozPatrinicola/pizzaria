@@ -5,6 +5,7 @@ import Home from './pages/Home/Home'
 import Error from './pages/Error/Error';
 import Header from './components/Header/Header';
 import SideBar from './components/SideBar/SideBar';
+import Login from './pages/Login/Login';
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />}></Route>
+        <Route path='login' element={<Login/>}></Route>
         <Route path='*' element={<Error />}></Route>
       </Routes>
     </BrowserRouter>

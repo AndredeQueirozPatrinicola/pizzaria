@@ -13,6 +13,6 @@ router.register('carrinho', viewsets.CarrinhoViewset, basename='carrinho')
 
 urlpatterns = [
     path('', include(router.urls)),
-    path('autorizacao/', include('autorizacao.urls')),
+    path('auth/', include('autorizacao.urls')),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
