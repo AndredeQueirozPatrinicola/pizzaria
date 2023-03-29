@@ -21,7 +21,10 @@ module.exports = {
       {
         test: /\.s?css$/,
         use: [MiniCssExtractPlugin.loader, "css-loader"],
-      },
+      }, {
+      test: /\.(gif|svg|jpg|png)$/,
+      loader: "file-loader",
+      }
     ]
   },
   optimization: {

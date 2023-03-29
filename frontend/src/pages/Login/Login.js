@@ -6,19 +6,18 @@ import './Login.css';
 
 function Login() {
     const [username, setUsername] = useState(''); 
-    const [password, setPassword] = useState('');     // Create the submit method.
+    const [password, setPassword] = useState('');     
     const submit = async e => {
         e.preventDefault(); const user = {
             username: username,
             password: password
-        };          // Create the POST requuest
+        };          
         const { data } = await axios.post('http://localhost:8000/api/auth/token/',
             user, {
                     headers: {
                         'Content-Type': 'application/json',
                     }
-                });
-        // Initialize the access & refresh token in localstorage.      
+                });   
         localStorage.clear();
         localStorage.setItem('access_token', data.access);
         localStorage.setItem('refresh_token', data.refresh);
